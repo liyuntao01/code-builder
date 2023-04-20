@@ -2,11 +2,10 @@ package ${classInfo.prefix}.convert;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className}Bean;
+import ${classInfo.prefix}.${classInfo.appName}.entity.${classInfo.className}Bean;
 import ${classInfo.prefix}.${classInfo.appName}.dto.${classInfo.className}DTO;
 import ${classInfo.prefix}.${classInfo.appName}.vo.${classInfo.className}VO;
-import com.lunz.query.MpAll;
-import com.lunz.query.MpPager;
+
 import org.mapstruct.CollectionMappingStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValueCheckStrategy;
@@ -17,7 +16,8 @@ import java.util.List;
 /**
 *  ${classInfo.classComment}实体映射类
 *
-*  Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd')}'.
+* @author  ${classInfo.author} on '
+* @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 
 @Mapper(collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED,

@@ -1,10 +1,6 @@
 package ${classInfo.prefix}.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lunz.query.MpAll;
-import com.lunz.query.MpPager;
-import com.lunz.util.MpUtil;
-import com.lunz.util.MyQueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +9,10 @@ import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 import ${classInfo.prefix}.${classInfo.appName}.convert.${classInfo.className}ConvertMappers;
-import ${classInfo.prefix}.${classInfo.appName}.dto.${classInfo.className}DTO;
+import ${classInfo.prefix}.${classInfo.appName}.req.${classInfo.className}DTO;
 import ${classInfo.prefix}.${classInfo.appName}.vo.${classInfo.className}VO;
 
-import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className}Bean;
+import ${classInfo.prefix}.${classInfo.appName}.entity.${classInfo.className}Bean;
 import ${classInfo.prefix}.${classInfo.appName}.service.${classInfo.className}Service;
 
 
@@ -26,7 +22,8 @@ import ${classInfo.prefix}.${classInfo.appName}.service.${classInfo.className}Se
 /**
  * ${classInfo.classComment}
  *
- * Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd HH:mm:ss')}'.
+ * @author  ${classInfo.author} on '
+ * @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
  */
 @Api(value = "${classInfo.tableDescription}接口", tags = {"${classInfo.tableDescription}API"})
 @RestController
@@ -67,7 +64,7 @@ public class ${classInfo.className}Controller {
     @ApiOperation("获取${classInfo.tableDescription}")
     @GetMapping("/{id}")
     public ${classInfo.className}VO get${classInfo.className}ById(@PathVariable("id") @NotNull(message = "id不能为空") Long id){
-        ${classInfo.className} ${classInfo.className?uncap_first} = ${classInfo.className?uncap_first}Service.getById(id);
+        ${classInfo.className}Bean ${classInfo.className?uncap_first} = ${classInfo.className?uncap_first}Service.getById(id);
         return ${classInfo.className}ConvertMappers.MAPPER.convertVO(${classInfo.className?uncap_first});
     }
 

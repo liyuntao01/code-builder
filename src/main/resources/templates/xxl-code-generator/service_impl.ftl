@@ -15,7 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 /**
 *  ${classInfo.classComment}
 *
-*  Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd')}'.
+*    @author  ${classInfo.author} on '
+* @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 @Service
 public class ${classInfo.className}ServiceImpl extends ServiceImpl<${classInfo.className}Mapper, ${classInfo.className}Bean> implements ${classInfo.className}Service {

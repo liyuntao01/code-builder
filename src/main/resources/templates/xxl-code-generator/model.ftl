@@ -24,36 +24,38 @@ import lombok.Data;
 /**
 *  ${classInfo.classComment}
 *
-*  Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd')}'.
+*    @author  ${classInfo.author} on '
+* @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
-@TableName("${classInfo.tableName}")
+
 @Data
+@TableName("${classInfo.tableName}")
 <#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>
-<#list classInfo.fieldList as fieldItem >
-    <#if fieldItem.fieldName == "createdById"|| fieldItem.fieldName == "createdAt">
-        <#assign checkExist = true />
-    </#if>
-</#list>
+    <#list classInfo.fieldList as fieldItem >
+        <#if fieldItem.fieldName == "createdById"|| fieldItem.fieldName == "createdAt">
+            <#assign checkExist = true />
+        </#if>
+    </#list>
 </#if>
 <#if checkExist?? && checkExist>
-public class ${classInfo.className}Bean extends BaseModel{
+    public class ${classInfo.className}Bean extends BaseModel{
 <#else >
-public class ${classInfo.className}Bean implements Serializable{
+    public class ${classInfo.className}Bean implements Serializable{
 </#if>
-    <#list classInfo.fieldList as fieldItem >
-        <#if fieldItem.fieldName == "deleted"
-        || fieldItem.fieldName == "createdById"
-        || fieldItem.fieldName == "tenantId"
-        || fieldItem.fieldName == "createdAt"
-        || fieldItem.fieldName == "updatedById"
-        || fieldItem.fieldName == "updatedAt"
-        || fieldItem.fieldName == "deletedAt"
-        || fieldItem.fieldName == "deletedById">
-        <#else >
+<#list classInfo.fieldList as fieldItem >
+    <#if fieldItem.fieldName == "deleted"
+    || fieldItem.fieldName == "createdById"
+    || fieldItem.fieldName == "tenantId"
+    || fieldItem.fieldName == "createdAt"
+    || fieldItem.fieldName == "updatedById"
+    || fieldItem.fieldName == "updatedAt"
+    || fieldItem.fieldName == "deletedAt"
+    || fieldItem.fieldName == "deletedById">
+    <#else >
         /**
         * ${fieldItem.fieldComment}
         */
         private ${fieldItem.fieldClass} ${fieldItem.fieldName};
-        </#if>
-    </#list>
+    </#if>
+</#list>
 }

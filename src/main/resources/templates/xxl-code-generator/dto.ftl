@@ -25,7 +25,8 @@ import lombok.Data;
 /**
 *  ${classInfo.tableDescription}DTO
 *
-*  Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd')}'.
+*   @author  ${classInfo.author} on '
+*  @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 @Data
 <#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>

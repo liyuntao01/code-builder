@@ -10,7 +10,8 @@ import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className};
 /**
 *  ${classInfo.classComment}
 *
-*  Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd')}'.
+*    @author  ${classInfo.author} on '
+* @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
 */
 public interface ${classInfo.className}Service extends IService<${classInfo.className}Bean> {
 
