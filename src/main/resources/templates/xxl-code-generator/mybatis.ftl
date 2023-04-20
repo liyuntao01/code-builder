@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="${classInfo.prefix}.mapper.${classInfo.className}Mapper">
 
-    <resultMap id="${classInfo.className}" type="${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className}" >
+    <resultMap id="${classInfo.className}" type="${classInfo.prefix}.${classInfo.appName}.entity.${classInfo.className}Bean" >
     <#if classInfo.fieldList?exists && classInfo.fieldList?size gt 0>
     <#list classInfo.fieldList as fieldItem ><#if fieldItem.columnName == "tenant_id"><#else>
         <result column="${fieldItem.columnName}" property="${fieldItem.fieldName}" />

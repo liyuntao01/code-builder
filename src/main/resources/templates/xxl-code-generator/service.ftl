@@ -12,9 +12,9 @@ import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className};
 *
 *  Created by ${classInfo.author} on '${.now?string('yyyy-MM-dd')}'.
 */
-public interface ${classInfo.className}Service extends IService<${classInfo.className}> {
+public interface ${classInfo.className}Service extends IService<${classInfo.className}Bean> {
 
-    void save${classInfo.className}(${classInfo.className} ${classInfo.className?uncap_first});
+    void save${classInfo.className}(${classInfo.className}Bean ${classInfo.className?uncap_first}Bean);
 
-    void update${classInfo.className}ById(${classInfo.className} ${classInfo.className?uncap_first});
+    void update${classInfo.className}ById(${classInfo.className}Bean ${classInfo.className?uncap_first}Bean);
 }

@@ -2,7 +2,7 @@ package ${classInfo.prefix}.convert;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className};
+import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className}Bean;
 import ${classInfo.prefix}.${classInfo.appName}.dto.${classInfo.className}DTO;
 import ${classInfo.prefix}.${classInfo.appName}.vo.${classInfo.className}VO;
 import com.lunz.query.MpAll;
@@ -26,11 +26,11 @@ public interface ${classInfo.className}ConvertMappers {
 
     ${classInfo.className}ConvertMappers MAPPER = Mappers.getMapper(${classInfo.className}ConvertMappers.class);
 
-    ${classInfo.className} convertBean(${classInfo.className}DTO ${classInfo.className?uncap_first}DTO);
+    ${classInfo.className}Bean convertBean(${classInfo.className}DTO ${classInfo.className?uncap_first}DTO);
 
-    List<${classInfo.className}VO> convertVOList(List<${classInfo.className}> ${classInfo.className?uncap_first}List);
+    List<${classInfo.className}VO> convertVoList(List<${classInfo.className}Bean> ${classInfo.className?uncap_first}List);
 
-    ${classInfo.className}VO convertVO(${classInfo.className} ${classInfo.className?uncap_first});
+    ${classInfo.className}VO convertVO(${classInfo.className}Bean ${classInfo.className?uncap_first});
 
    <#-- MpAll<${classInfo.className}> convertAll(MpAll<${classInfo.className}DTO> pageDTO);
 

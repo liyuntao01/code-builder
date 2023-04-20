@@ -16,7 +16,7 @@ import ${classInfo.prefix}.${classInfo.appName}.convert.${classInfo.className}Co
 import ${classInfo.prefix}.${classInfo.appName}.dto.${classInfo.className}DTO;
 import ${classInfo.prefix}.${classInfo.appName}.vo.${classInfo.className}VO;
 
-import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className};
+import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className}Bean;
 import ${classInfo.prefix}.${classInfo.appName}.service.${classInfo.className}Service;
 
 
@@ -40,7 +40,7 @@ public class ${classInfo.className}Controller {
     @PostMapping
     public ${classInfo.className}VO create${classInfo.className}(@RequestBody ${classInfo.className}DTO ${classInfo.className?uncap_first}DTO){
 
-        ${classInfo.className} ${classInfo.className?uncap_first} = ${classInfo.className}ConvertMappers.MAPPER.convertBean(${classInfo.className?uncap_first}DTO);
+        ${classInfo.className}Bean ${classInfo.className?uncap_first} = ${classInfo.className}ConvertMappers.MAPPER.convertBean(${classInfo.className?uncap_first}DTO);
         ${classInfo.className?uncap_first}Service.save${classInfo.className}(${classInfo.className?uncap_first});
         return ${classInfo.className}ConvertMappers.MAPPER.convertVO(${classInfo.className?uncap_first});
 
@@ -51,7 +51,7 @@ public class ${classInfo.className}Controller {
     @PutMapping
     public void update${classInfo.className}(@RequestBody ${classInfo.className}DTO ${classInfo.className?uncap_first}DTO){
 
-        ${classInfo.className} ${classInfo.className?uncap_first} = ${classInfo.className}ConvertMappers.MAPPER.convertBean(${classInfo.className?uncap_first}DTO);
+        ${classInfo.className}Bean ${classInfo.className?uncap_first} = ${classInfo.className}ConvertMappers.MAPPER.convertBean(${classInfo.className?uncap_first}DTO);
         ${classInfo.className?uncap_first}Service.update${classInfo.className}ById(${classInfo.className?uncap_first});
 
     }
