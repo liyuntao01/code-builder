@@ -1,7 +1,7 @@
 package ${classInfo.prefix}.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import ${classInfo.prefix}.${classInfo.appName}.bean.${classInfo.className}Bean;
+import ${classInfo.prefix}.${classInfo.appName}.entity.${classInfo.className}Bean;
 import ${classInfo.prefix}.${classInfo.appName}.mapper.${classInfo.className}Mapper;
 import ${classInfo.prefix}.${classInfo.appName}.service.${classInfo.className}Service;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -25,7 +25,7 @@ import ${classInfo.prefix}.${classInfo.appName}.service.${classInfo.className}Se
  * @author  ${classInfo.author} on '
  * @date ${.now?string('yyyy-MM-dd HH:mm:ss')}'
  */
-@Api(value = "${classInfo.tableDescription}接口", tags = {"${classInfo.tableDescription}API"})
+@Api(value = "${classInfo.classComment}接口", tags = {"${classInfo.classComment}API"})
 @RestController
 @RequestMapping("/${classInfo.appName}/${classInfo.slashName}")
 public class ${classInfo.className}Controller {
@@ -33,7 +33,7 @@ public class ${classInfo.className}Controller {
     @Autowired
     private ${classInfo.className}Service ${classInfo.className?uncap_first}Service;
 
-    @ApiOperation("新建${classInfo.tableDescription}")
+    @ApiOperation("新建${classInfo.classComment}")
     @PostMapping
     public ${classInfo.className}VO create${classInfo.className}(@RequestBody ${classInfo.className}DTO ${classInfo.className?uncap_first}DTO){
 
@@ -44,7 +44,7 @@ public class ${classInfo.className}Controller {
     }
 
 
-    @ApiOperation("修改${classInfo.tableDescription}")
+    @ApiOperation("修改${classInfo.classComment}")
     @PutMapping
     public void update${classInfo.className}(@RequestBody ${classInfo.className}DTO ${classInfo.className?uncap_first}DTO){
 
@@ -53,7 +53,7 @@ public class ${classInfo.className}Controller {
 
     }
 
-    @ApiOperation("删除${classInfo.tableDescription}")
+    @ApiOperation("删除${classInfo.classComment}")
     @DeleteMapping("/{id}")
     public void delete${classInfo.className}(@PathVariable("id") @NotNull(message = "id不能为空") Long id){
 
@@ -61,7 +61,7 @@ public class ${classInfo.className}Controller {
 
     }
 
-    @ApiOperation("获取${classInfo.tableDescription}")
+    @ApiOperation("获取${classInfo.classComment}")
     @GetMapping("/{id}")
     public ${classInfo.className}VO get${classInfo.className}ById(@PathVariable("id") @NotNull(message = "id不能为空") Long id){
         ${classInfo.className}Bean ${classInfo.className?uncap_first} = ${classInfo.className?uncap_first}Service.getById(id);
